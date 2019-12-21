@@ -9,10 +9,9 @@ var data;
 
 document.addEventListener('DOMContentLoaded', function (event) {
     var req = utils.httpRequest(endPoint, 'GET');
-    if (req.status == 200) {
+    if (req.status === 200) {
         data = JSON.parse(req.responseText);
         limit = data.limit;
-        console.log(data, limit);
 
         var elMaxVal = utils.getEl('max-value');
         elMaxVal.textContent = 'Max Value is ' + limit;
@@ -24,4 +23,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
         // APIs error based on status code
         alert('APIs error, please reload to try again !!!')
     }
+
+    if (process.env.NODE_ENV == 'development') {
+        console.log = 'noop';
+        console.warn = 'noop';
+        console.error = 'noop';
+      }
 })

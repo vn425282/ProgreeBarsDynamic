@@ -1,16 +1,18 @@
 const path = require('path');
 const IconfontWebpackPlugin = require('iconfont-webpack-plugin');
-const NODE_ENV = process.env.NODE_ENV || 'development';
+const NODE_ENV = process.env.NODE_ENV || 'production';
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
-const cssFilename = NODE_ENV === 'development' ? 'static/css/[name].[hash:8].css' : 'static/css/[name].[hash:8].min.css'
+const cssFilename = NODE_ENV === 'production' ? 'static/css/[name].[hash:8].css' : 'static/css/[name].[hash:8].min.css'
 
 module.exports = {
-  mode: 'development',
+  devtool: "hidden-source-map",
+  mode: 'production',
   entry: {
     bundle: path.join(__dirname, '/src/index.js'),
     // Set up an ES6-ish environment
@@ -18,13 +20,27 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: NODE_ENV === 'development' ? '[name].min.js' : '[name][hash:6].min.js'
+    filename: NODE_ENV === 'production' ? '[name].min.js' : '[name][hash:6].min.js'
   },
   resolve: {
     extensions: ['*', '.js', '.styl', '.pub']
   },
   resolveLoader: {
     modules: [path.join(__dirname, 'node_modules')]
+  },
+  optimization: {
+    minimizer: [
+      new UglifyJSPlugin({
+        uglifyOptions: {
+          compress: {
+            drop_console: true
+          },
+          output: {
+            comments: false
+          }
+        },
+      }),
+    ],
   },
   module: {
     rules: [
@@ -40,7 +56,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: process.env.NODE_ENV === 'development',
+              hmr: process.env.NODE_ENV === 'production',
             },
           },
           'css-loader',
