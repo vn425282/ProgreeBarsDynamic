@@ -1,0 +1,71 @@
+.layout {
+    .tag {
+        display: inline-block;
+        white-space: nowrap;
+        background-color: #f1f8ff;
+        border-radius: 3px;
+        font-size: 12px!important;
+    }
+    .custom-select {
+        position: relative;
+        &select {
+            display: none;
+        }
+    }
+    .select-selected {
+        color: #ffffff;
+        padding: 8px 16px;
+        border: 1px solid transparent;
+        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+        cursor: pointer;
+        &:after {
+            position: absolute;
+            content: "";
+            top: 14px;
+            right: 10px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-color: #fff transparent transparent transparent;
+        }
+        &.select-arrow-active:after {
+            border-color: transparent transparent #fff transparent;
+            top: 7px;
+        }
+    }
+    .progress-bar {
+        border-radius: 10px;
+        &.active {
+            background-color: red;
+        }
+    }
+    .progress {
+        width: 0;
+        animation: progress 0.9s ease-in-out forwards;
+        &-black-color {
+            color: black;
+        }
+        &-title {
+            opacity: 0;
+            animation: show 0.35s forwards ease-in-out 0.5s;
+        }
+    }
+}
+
+@keyframes progress {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

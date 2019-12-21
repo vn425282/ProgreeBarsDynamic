@@ -1,0 +1,104 @@
+*,
+:before,
+:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial;
+}
+
+a {
+    text-decoration: none;
+}
+
+.layout {
+    display: table;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    top: 10%;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+    background-color: #e8e8e8;
+    padding: 5px 25px;
+    box-sizing: border-box;
+    height: 23px;
+    line-height: 13px;
+    font-size: 9px;
+    font-weight: 600;
+    -ms-grid-row: 3;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.banner {
+    position: absolute;
+    z-index: 9999;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    display: none;
+}
+
+.banner.active {
+    display: block;
+}
+
+.banner-bottom {
+    left: 0;
+    right: 0;
+    bottom: 10px;
+}
+
+.banner-top {
+    left: 0;
+    right: 0;
+    top: 10px;
+}
+
+.banner-right {
+    right: 10px;
+    bottom: 10%;
+    min-height: 10vh;
+}
+
+.banner-left {
+    left: 10px;
+    bottom: 10%;
+    min-height: 10vh;
+}
+
+.alert-primary {
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+
+.banner-close {
+    position: absolute;
+    right: 1.5%;
+}
+
+.banner-close:after {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    content: 'X';
+    color: #69f;
+}
+
+@import './home.scss';
