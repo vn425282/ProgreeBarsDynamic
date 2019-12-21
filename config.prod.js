@@ -98,7 +98,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, '/src/layouts/index.html'),
-      filename: 'index.html'
+      filename: 'index.html',
+      favicon: path.join(__dirname, '/src/favicon/favicon.ico')
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
