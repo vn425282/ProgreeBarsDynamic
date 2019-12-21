@@ -35,8 +35,11 @@ This will be automation deploy if have any change on master branch on github
    
 ## Evidences
 - Animation and implement the uses case above (please click into the picture for watching the video)
+
 [![Watch the video](https://i.ibb.co/7jZHW7N/Screen-Shot-2019-12-22-at-00-54-31.png)](https://www.youtube.com/watch?v=h4Y1D2uX7lw)
+
 - Responsive 
+
 [![Watch the video](https://i.ibb.co/pb8DhvD/Screen-Shot-2019-12-22-at-01-01-15.png)](https://youtu.be/BgEgm6wuRc8)
 ## Ref
 - https://aws.amazon.com/vi/getting-started/tutorials/deploy-react-app-cicd-amplify/
