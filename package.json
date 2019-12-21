@@ -12,8 +12,7 @@
     "dependencies": {
         "@types/jest": "^24.0.24",
         "bootstrap": "^4.2.1",
-        "iconfont-webpack-plugin": "^3.1.0",
-        "node-sass": "^4.11.0"
+        "iconfont-webpack-plugin": "^3.1.0"
     },
     "devDependencies": {
         "@babel/core": "^7.0.0-beta.51",
@@ -51,9 +50,10 @@
         "jest": "^24.9.0",
         "loader": "^2.1.1",
         "mini-css-extract-plugin": "^0.9.0",
+        "node-sass": "^4.13.0",
         "pug-html-loader": "^1.1.5",
         "raw-loader": "^0.5.1",
-        "sass-loader": "^7.1.0",
+        "sass-loader": "^7.3.1",
         "style-loader": "^0.20.2",
         "stylus": "^0.54.5",
         "stylus-loader": "^3.0.2",
@@ -61,7 +61,7 @@
         "sw-precache-webpack-plugin": "^0.11.5",
         "uglifyjs-webpack-plugin": "^1.2.7",
         "url-loader": "^1.0.0-beta.0",
-        "webpack": "^4.20.2",
+        "webpack": "^4.41.4",
         "webpack-cli": "^3.1.1",
         "webpack-dev-server": "^3.1.0",
         "webpack-manifest-plugin": "^2.0.3"
