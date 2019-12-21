@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Utils = require('./js/utils');
 const utils = new Utils();
-const endPoint = 'http://pb-api.herokuapp.com/bars';
+const endPoint = 'https://pb-api.herokuapp.com/bars';
 var limit = 180;
 var data;
 
