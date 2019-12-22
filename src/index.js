@@ -3,13 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Utils = require('./js/utils');
 const utils = new Utils();
-const endPoint = 'http://pb-api.herokuapp.com/bars';
+var endPoint = 'http://pb-api.herokuapp.com/bars';
 var limit = 180;
 var data;
 
 document.addEventListener('DOMContentLoaded', function (event) {
-    if (process.env.NODE_ENV == 'development') {
-        this.endPoint = 'https://pb-api.herokuapp.com/bars';
+    if (process.env.NODE_ENV === 'production') {
+        endPoint = 'https://pb-api.herokuapp.com/bars';
     }
 
     var req = utils.httpRequest(endPoint, 'GET');

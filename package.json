@@ -4,7 +4,7 @@
     "main": "src/index.js",
     "scripts": {
         "start": "webpack-dev-server . --open",
-        "build": "rm -rf dist &&  NODE_ENV=production webpack --config config.prod.js",
+        "build": "rm -rf dist && NODE_ENV=production webpack --config config.prod.js",
         "clean": "rm -rf target",
         "test": "jest",
         "test-coverage": "jest --coverage"
