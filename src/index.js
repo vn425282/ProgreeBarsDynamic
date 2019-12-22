@@ -3,11 +3,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Utils = require('./js/utils');
 const utils = new Utils();
-const endPoint = 'https://pb-api.herokuapp.com/bars';
+const endPoint = 'http://pb-api.herokuapp.com/bars';
 var limit = 180;
 var data;
 
 document.addEventListener('DOMContentLoaded', function (event) {
+    if (process.env.NODE_ENV == 'development') {
+        this.endPoint = 'https://pb-api.herokuapp.com/bars';
+    }
+
     var req = utils.httpRequest(endPoint, 'GET');
     if (req.status === 200) {
         data = JSON.parse(req.responseText);
@@ -24,9 +28,5 @@ document.addEventListener('DOMContentLoaded', function (event) {
         alert('APIs error, please reload to try again !!!')
     }
 
-    if (process.env.NODE_ENV == 'development') {
-        console.log = 'noop';
-        console.warn = 'noop';
-        console.error = 'noop';
-      }
+
 })
